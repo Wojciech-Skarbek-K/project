@@ -11,6 +11,7 @@ router.get('/employees', async (req, res) => {
 
 });
 
+
 router.get('/addEmployee', async (req, res) => {
   res.render('addEmployee', { departments: await employeeData.getDepartments()}
   ); 
@@ -31,12 +32,27 @@ router.post('/addEmployee/submit', async (req, res) => {
 
 router.get('/highestSalesEmployee', async (req, res) => {
 
-  res.render('highestSalesView', {
-    employee: await employeeData.getHighestSalesEmployee()
+
+
+router.get('/salary-report', async (req, res) => {
+  let empData = await employeeData.getEmployees();
+  let salesData = await employeeData.getSales();
+  for(let emp of empData){
+    if(emp.dep_id === 2){
+      for(let sal of salesData){
+        if(emp.emp_id === sal.emp_id){
+          let totalSalary = emp.salary + (sal.com_rate * sal.sal_rate);
+          emp.salary = totalSalary;
+        }
+        
+      }
+    } 
+  }
+  res.render('salaryReport', {
+    employees: empData
   }
   ); 
 
 });
-
 
 module.exports = router
