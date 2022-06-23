@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const testData = require('./testData.js')
 const employeeData = require('./employeeData.js')
 
 router.get('/employees', async (req, res) => {
@@ -11,5 +10,16 @@ router.get('/employees', async (req, res) => {
   ); 
 
 });
+
+router.get('/highestSalesEmployee', async (req, res) => {
+
+  res.render('highestSalesView', {
+    employees: await employeeData.getHighestSalesEmployee()
+  }
+  ); 
+
+});
+
+
 
 module.exports = router

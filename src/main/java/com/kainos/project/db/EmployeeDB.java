@@ -39,6 +39,19 @@ public class EmployeeDB {
         return employee;
     }
 
+    public static Employee getHighestSalesEmployee() throws SQLException {
+        Connection c = DB.getConnection();
+        Statement st = c.createStatement();
+        ResultSet rs = st.executeQuery(
+                "SELECT * FROM Sales_Employee WHERE sal_rate = (SELECT MAX(sal_rate) FROM Sales_Employee);"
+        );
+        rs.next();
+        Employee employee = new Employee(rs);
+        rs.close();
+        st.close();
+        return employee;
+    }
+
     public static List<Employee> getEmployeesByDep(short dep_id) throws SQLException {
         Connection c = DB.getConnection();
         Statement st = c.createStatement();
