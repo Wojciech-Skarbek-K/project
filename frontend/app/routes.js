@@ -42,7 +42,7 @@ router.get('/salary-report', async (req, res) => {
       for(let sal of salesData){
         if(emp.emp_id === sal.emp_id){
           let totalSalary = emp.salary + (sal.com_rate * sal.sal_rate);
-          emp.salary = totalSalary;
+          emp.salary = totalSalary.toFixed(0);
         }
         
       }
