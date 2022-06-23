@@ -9,6 +9,9 @@
       <change beforePath="$PROJECT_DIR$/frontend/app/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/employeeData.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/employeeData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes.js" afterDir="false" />
+>>>>>>> main
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,14 +47,21 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+<<<<<<< HEAD
     "last_opened_file_path": "/Users/mateuszswiercz/Project/project/src/main/java/com/kainos/project"
+=======
+    "last_opened_file_path": "/Users/maciej.kaczor/project"
+>>>>>>> main
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="$PROJECT_DIR$/src/main/java/com/kainos/project" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+=======
+>>>>>>> main
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">

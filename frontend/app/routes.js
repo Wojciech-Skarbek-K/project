@@ -4,18 +4,13 @@ const testData = require('./testData.js')
 const employeeData = require('./employeeData.js')
 const userData = require('./userData.js')
 
-// Add your routes here - above the module.exports line
-// router.get('/employees', async (req, res) => {
+router.get('/employees', async (req, res) => {
 
-//   res.render('employeesView', {
-//     employees: await employeeData.getEmployees()
-//   }
-//   ); 
+  res.render('employeesView', {
+    employees: await employeeData.getEmployees()
+  }
+  ); 
 
-// });
-
-router.get('/employees', function(req, res){ 
-  res.render('employeesView', { employees: testData.getEmployees() } ); 
 });
 
 
