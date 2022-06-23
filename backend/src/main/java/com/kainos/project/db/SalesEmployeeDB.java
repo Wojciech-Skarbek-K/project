@@ -38,4 +38,17 @@ public class SalesEmployeeDB {
         st.executeUpdate(sql);
         return 1;
     }
+
+    public static SalesEmployee getHighestSalesEmployee() throws SQLException {
+        Connection c = DB.getConnection();
+        Statement st = c.createStatement();
+        ResultSet rs = st.executeQuery(
+                "SELECT * FROM Sales_Employee WHERE sal_rate = (SELECT MAX(sal_rate) FROM Sales_Employee);"
+        );
+        rs.next();
+        SalesEmployee employee = new SalesEmployee(rs);
+        rs.close();
+        st.close();
+        return employee;
+    }
 }

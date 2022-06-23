@@ -1,0 +1,45 @@
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+{{ govukTable({
+    caption: "Highest Sales Employee",
+    captionClasses: "govuk-table__caption--m",
+    firstCellIsHeader: true,
+    head: [
+      {
+        text: "Sales Employee ID"
+      },
+      {
+        text: "Employee ID"
+      },
+      {
+        text: "Commission Rate"
+      },
+      {
+        text: "Sales Rate"
+      }
+    ],
+    rows: [
+      [
+        {
+          text: employee.sal_id
+        },
+        {
+          text: employee.emp_id
+        },
+        {
+          text: employee.wm_rate
+        },
+        {
+          text: employee.sal_rate
+        }
+      ]
+    ]
+  }) }}
+
+{% endblock %}

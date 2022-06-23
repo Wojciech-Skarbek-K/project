@@ -13,3 +13,12 @@ exports.getEmployees = async () => {
       }
       return employees;
   }
+
+exports.getHighestSalesEmployee= async () => { 
+    try {  
+      const employeeResponse = await axios.get('http://localhost:8080/api/highestSalesEmployee')
+      return employeeResponse.data;
+    } catch (e) {
+       return new Error('Could not get employees')
+    }
+}
