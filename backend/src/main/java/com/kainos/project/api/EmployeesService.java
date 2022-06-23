@@ -1,6 +1,7 @@
 package com.kainos.project.api;
 
 import com.kainos.project.api.models.Employee;
+import com.kainos.project.api.models.SalesEmployee;
 import com.kainos.project.db.EmployeeDB;
 import io.swagger.annotations.Api;
 
@@ -19,12 +20,6 @@ public class EmployeesService {
         return EmployeeDB.getEmployees();
     }
 
-    @GET
-    @Path("/highestSalesEmployee")
-    @Produces({MediaType.APPLICATION_JSON})
-    public Employee getHighestSalesEmployee() throws SQLException {
-        return EmployeeDB.getHighestSalesEmployee();
-    }
 
     @GET
     @Path("/employees/{id}")

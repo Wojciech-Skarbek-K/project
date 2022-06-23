@@ -25,4 +25,11 @@ public class SalesEmployeeService {
     public int addSalesEmployee(SalesEmployee salesEmployee) throws SQLException {
         return SalesEmployeeDB.addSalesEmployee(salesEmployee);
     }
+
+    @GET
+    @Path("/highestSalesEmployee")
+    @Produces({MediaType.APPLICATION_JSON})
+    public SalesEmployee getHighestSalesEmployee() throws SQLException {
+        return SalesEmployeeDB.getHighestSalesEmployee();
+    }
 }

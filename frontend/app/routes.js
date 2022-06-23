@@ -14,7 +14,7 @@ router.get('/employees', async (req, res) => {
 router.get('/highestSalesEmployee', async (req, res) => {
 
   res.render('highestSalesView', {
-    employees: await employeeData.getHighestSalesEmployee()
+    employee: await employeeData.getHighestSalesEmployee()
   }
   ); 
 
