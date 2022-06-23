@@ -16,7 +16,7 @@ exports.getEmployees = async () => {
 
 exports.getHighestSalesEmployee= async () => { 
     try {  
-      const employeeResponse = await axios.get('http://localhost:8080/api/employees')
+      const employeeResponse = await axios.get('http://localhost:8080/api/getHighestSalesEmployee')
       return highestSalesEmployee;
     } catch (e) {
        return new Error('Could not get employees')

@@ -20,6 +20,13 @@ public class EmployeesService {
     }
 
     @GET
+    @Path("/highestSalesEmployee")
+    @Produces({MediaType.APPLICATION_JSON})
+    public Employee getHighestSalesEmployee() throws SQLException {
+        return EmployeeDB.getHighestSalesEmployee();
+    }
+
+    @GET
     @Path("/employees/{id}")
     @Produces({MediaType.APPLICATION_JSON})
     public Employee getEmployeeById(@PathParam("id") short id) throws SQLException {
