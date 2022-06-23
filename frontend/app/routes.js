@@ -13,17 +13,21 @@ router.get('/employees', async (req, res) => {
 
 
 router.get('/addEmployee', async (req, res) => {
-  res.render('addEmployee', {
-    departments: await employeeData.getDepartments()
-  }
+  res.render('addEmployee', { departments: await employeeData.getDepartments()}
   ); 
+  
 });
 
 router.post('/addEmployee/submit', async (req, res) => {
-  res.render('addEmployee', {
-    departments: await employeeData.getDepartments()
+  try{
+    let insertedKey = await employeeData.addEmployee(req.body ); 
+    res.redirect('addEmployee') 
+  } catch(e){
+    console.log(e);
+    res.locals.errormessage = "Could not craete employee";
+    res.render("addEmployee", req.body);
   }
-  ); 
+  
 });
 
 

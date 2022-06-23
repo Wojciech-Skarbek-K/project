@@ -17,7 +17,7 @@ exports.getEmployees = async () => {
   exports.getDepartments = async () => { 
     let departments = []  
       try {  
-        const departmentsResponse = await axios.get('http://localhost:8080/api/getDepartment')
+        const departmentsResponse = await axios.get('http://localhost:8080/api/departments')
         departments = departmentsResponse.data
       } catch (e) {
          return new Error('Could not get employees')
@@ -25,3 +25,8 @@ exports.getEmployees = async () => {
       }
       return departments;
   }
+
+  exports.addEmployee = async (newEmployee) => {
+    let results = await axios.post("http://localhost:8080/api/employees", newEmployee)
+    return results.insertId; 
+}

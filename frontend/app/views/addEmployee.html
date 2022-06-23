@@ -17,9 +17,9 @@
             classes: "govuk-label--l",
             isPageHeading: true
         },
-        id: "name",
-        name: "name",
-        value: data["name"]
+        id: "emp_name",
+        name: "emp_name",
+        value: data["emp_name"]
         }) }}
 
     {{ govukInput({
@@ -66,8 +66,16 @@
         id: "nin",
         name: "nin",
         value: data["nin"]
-        }) }}    
-    
+        }) }} 
+
+    {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+    <select class="govuk-select" id="dep_id" name="dep_id">
+        {% for department in departments %}
+            <option value={{department.dep_id}}>{{department.dep_name}}</option>
+        {% endfor %}
+      </select>
+
     <button type="submit" class="govuk-button" data-module="govuk-button">
       Accept and send
     </button>
