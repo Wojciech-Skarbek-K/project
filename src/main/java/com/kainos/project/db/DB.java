@@ -27,6 +27,7 @@ public class DB {
             user            = props.getProperty("user");
             password        = props.getProperty("password");
             host            = props.getProperty("host");
+            System.out.println(user);
 
             if (user == null || password == null || host == null)
                 throw new IllegalArgumentException(

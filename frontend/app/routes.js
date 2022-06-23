@@ -1,6 +1,5 @@
 const express = require('express')
 const router = express.Router()
-const testData = require('./testData.js')
 const employeeData = require('./employeeData.js')
 const userData = require('./userData.js')
 
@@ -31,5 +30,30 @@ router.post('/registration', async (req, res) => {
   }
 
   });
+
+  router.get('/login', async (req, res) => {
+    res.render('loginForm'); 
+  
+  });
+
+  router.post('/login', async (req, res) => {
+    try {
+      userInfo = await userData.checkUser(req.body);
+      if (userInfo.flag == true) {
+        if (userInfo.role == 'HR') {
+          res.redirect('users');  
+        } else if (userInfo.role == 'IDK'){
+          res.redirect('employees'); 
+        }
+      } else {
+        res.redirect('loginForm'); 
+      }
+    } catch (e){
+      console.log(e)
+      res.locals.errormessage = "Could not create employee"
+      res.render('loginForm', req.body )
+    }
+  
+    });
 
 module.exports = router
