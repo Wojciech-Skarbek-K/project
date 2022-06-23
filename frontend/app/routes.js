@@ -20,7 +20,7 @@ router.get('/addEmployee', async (req, res) => {
 router.post('/addEmployee/submit', async (req, res) => {
   try{
     let insertedKey = await employeeData.addEmployee(req.body ); 
-    res.redirect('addEmployee') 
+    res.redirect('/employees') 
   } catch(e){
     console.log(e);
     res.locals.errormessage = "Could not craete employee";
