@@ -2,7 +2,7 @@ package com.kainos.project;
 
 import com.kainos.project.api.DepartmentService;
 import com.kainos.project.api.EmployeesService;
-import com.kainos.project.api.models.SalesEmployeeService;
+import com.kainos.project.api.SalesEmployeeService;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
