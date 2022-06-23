@@ -9,19 +9,19 @@ import java.sql.SQLException;
 public class SalesEmployee {
     private short sal_id;
     private short emp_id;
-    private int wm_rate;
+    private double com_rate;
     private int sal_rate;
 
     @JsonCreator
     public SalesEmployee(
             @JsonProperty("sal_id") short sal_id,
             @JsonProperty("emp_id") short emp_id,
-            @JsonProperty("com_rate") int com_rate,
+            @JsonProperty("com_rate") double com_rate,
             @JsonProperty("sal_rate") int sal_rate
     ) {
         this.sal_id = sal_id;
         this.emp_id = emp_id;
-        this.wm_rate = com_rate;
+        this.com_rate = com_rate;
         this.sal_rate = sal_rate;
     }
 
@@ -29,7 +29,7 @@ public class SalesEmployee {
         this(
                 rs.getShort("sal_id"),
                 rs.getShort("emp_id"),
-                (int)rs.getDouble("com_rate")*100,
+                rs.getDouble("com_rate")*100,
                 (int)rs.getDouble("sal_rate")*100
         );
     }
@@ -42,8 +42,8 @@ public class SalesEmployee {
         return emp_id;
     }
 
-    public int getWm_rate() {
-        return wm_rate;
+    public double getCom_rate() {
+        return com_rate;
     }
 
     public int getSal_rate() {
