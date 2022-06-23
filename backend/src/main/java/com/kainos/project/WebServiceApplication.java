@@ -39,11 +39,8 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
                     final Environment environment) {
         environment.jersey().register(new EmployeesService());
         environment.jersey().register(new DepartmentService());
-<<<<<<< HEAD:src/main/java/com/kainos/project/WebServiceApplication.java
         environment.jersey().register(new UserService());
-=======
         environment.jersey().register(new SalesEmployeeService());
->>>>>>> main:backend/src/main/java/com/kainos/project/WebServiceApplication.java
     }
 
 }
