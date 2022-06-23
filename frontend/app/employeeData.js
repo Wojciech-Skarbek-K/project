@@ -14,6 +14,7 @@ exports.getEmployees = async () => {
       return employees;
   }
 
+
   exports.getSales = async () => { 
     let sales = []  
       try {  
@@ -25,3 +26,29 @@ exports.getEmployees = async () => {
       }
       return sales;
   }
+
+  exports.getDepartments = async () => { 
+    let departments = []  
+      try {  
+        const departmentsResponse = await axios.get('http://localhost:8080/api/departments')
+        departments = departmentsResponse.data
+      } catch (e) {
+         return new Error('Could not get employees')
+
+      }
+      return departments;
+  }
+
+  exports.addEmployee = async (newEmployee) => {
+    let results = await axios.post("http://localhost:8080/api/employees", newEmployee)
+    return results.insertId; 
+  }
+  
+exports.getHighestSalesEmployee= async () => { 
+    try {  
+      const employeeResponse = await axios.get('http://localhost:8080/api/highestSalesEmployee')
+      return employeeResponse.data;
+    } catch (e) {
+       return new Error('Could not get employees')
+    }
+}

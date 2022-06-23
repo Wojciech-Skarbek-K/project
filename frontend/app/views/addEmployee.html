@@ -1,0 +1,85 @@
+{% extends "layout_unbranded.html" %} 
+{% block pageTitle %} 
+  Create New Employee
+{% endblock %} 
+ 
+{% block content %}
+
+{% if errormessage %} 
+<div class="govuk-error-message">{{ errormessage }}</div> 
+{% endif %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+<form action="/addEmployee/submit" method="post">
+    {{ govukInput({
+        label: {
+            text: "Insert new employee name: ",
+            classes: "govuk-label--l",
+            isPageHeading: true
+        },
+        id: "emp_name",
+        name: "emp_name",
+        value: data["emp_name"]
+        }) }}
+
+    {{ govukInput({
+        label: {
+            text: "Insert new employee address: ",
+            classes: "govuk-label--l",
+            isPageHeading: true
+        },
+        id: "address",
+        name: "address",
+        value: data["address"]
+        }) }}
+        
+    {{ govukInput({
+        label: {
+            text: "Insert new employee salary: ",
+            classes: "govuk-label--l",
+            isPageHeading: true
+        },
+        id: "salary",
+        name: "salary",
+        value: data["salary"]
+        }) }}
+
+    
+
+    {{ govukInput({
+        label: {
+            text: "Insert new employee bank account number: ",
+            classes: "govuk-label--l",
+            isPageHeading: true
+        },
+        id: "ban",
+        name: "ban",
+        value: data["ban"]
+        }) }}
+
+    {{ govukInput({
+        label: {
+            text: "Insert new employee NIN: ",
+            classes: "govuk-label--l",
+            isPageHeading: true
+        },
+        id: "nin",
+        name: "nin",
+        value: data["nin"]
+        }) }} 
+
+    {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+    <select class="govuk-select" id="dep_id" name="dep_id">
+        {% for department in departments %}
+            <option value={{department.dep_id}}>{{department.dep_name}}</option>
+        {% endfor %}
+      </select>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Accept and send
+    </button>
+
+</form>
+
+{% endblock %}

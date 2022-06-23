@@ -12,6 +12,27 @@ router.get('/employees', async (req, res) => {
 });
 
 
+router.get('/addEmployee', async (req, res) => {
+  res.render('addEmployee', { departments: await employeeData.getDepartments()}
+  ); 
+  
+});
+
+router.post('/addEmployee/submit', async (req, res) => {
+  try{
+    let insertedKey = await employeeData.addEmployee(req.body ); 
+    res.redirect('/employees') 
+  } catch(e){
+    console.log(e);
+    res.locals.errormessage = "Could not craete employee";
+    res.render("addEmployee", req.body);
+  }
+  
+});
+
+router.get('/highestSalesEmployee', async (req, res) => {
+
+
 
 router.get('/salary-report', async (req, res) => {
   let empData = await employeeData.getEmployees();
@@ -33,4 +54,5 @@ router.get('/salary-report', async (req, res) => {
   ); 
 
 });
+
 module.exports = router
