@@ -34,7 +34,7 @@ public class DB {
                                 + "user, password, an host properties.");
 
             conn = DriverManager.getConnection("jdbc:mysql://"
-                    + host + "/project_WojciechS?allowPublicKeyRetrieval=true&useSSL=false", user, password);
+                    + host + "/front_PatrykK?allowPublicKeyRetrieval=true&useSSL=false", user, password);
             return conn;
 
         } catch (Exception e) {

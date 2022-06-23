@@ -14,7 +14,7 @@ public class Employee {
     private String bank;
     private int salary; // divided by 100
 
-    private short department_id;
+    private short dep_id;
 
     @JsonCreator
     public Employee(
@@ -24,7 +24,7 @@ public class Employee {
             @JsonProperty("nin") String nin,
             @JsonProperty("bank") String bank,
             @JsonProperty("salary") int salary,
-            @JsonProperty("department_id") short department_id
+            @JsonProperty("dep_id") short dep_id
     ) {
         this.emp_id = emp_id;
         this.emp_name = emp_name;
@@ -32,6 +32,7 @@ public class Employee {
         this.nin = nin;
         this.bank = bank;
         this.salary = salary;
+        this.dep_id = dep_id;
     }
 
     public Employee(ResultSet rs) throws SQLException {
@@ -40,7 +41,7 @@ public class Employee {
                 rs.getString("emp_name"),
                 rs.getString("address"),
                 rs.getString("nin"),
-                rs.getString("bank"),
+                rs.getString("ban"),
                 (int)(rs.getDouble("salary")*100),
                 rs.getShort("dep_id")
         );
@@ -70,7 +71,7 @@ public class Employee {
         return salary;
     }
 
-    public short getDepartment_id() {
-        return department_id;
+    public short getDep_id() {
+        return dep_id;
     }
 }

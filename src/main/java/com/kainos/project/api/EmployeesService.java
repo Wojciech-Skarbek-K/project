@@ -14,25 +14,28 @@ import java.util.List;
 public class EmployeesService {
     @GET
     @Path("/employees")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Produces({MediaType.APPLICATION_JSON})
     public List<Employee> getEmployees() throws SQLException {
         return EmployeeDB.getEmployees();
     }
 
     @GET
     @Path("/employees/{id}")
-    public Employee getEmployeeById(@PathParam("short") short id) throws SQLException {
+    @Produces({MediaType.APPLICATION_JSON})
+    public Employee getEmployeeById(@PathParam("id") short id) throws SQLException {
         return EmployeeDB.getEmployeeById(id);
     }
 
     @GET
-    @Path("/employees/{dep_id}")
+    @Path("/employees/dep/{dep_id}")
+    @Produces({MediaType.APPLICATION_JSON})
     public List<Employee> getEmployeesByDep(@PathParam("dep_id") short dep_id) throws SQLException {
         return EmployeeDB.getEmployeesByDep(dep_id);
     }
 
     @POST
     @Path("/employees")
+    @Produces({MediaType.APPLICATION_JSON})
     public int addEmployee(Employee employee) throws SQLException {
         return EmployeeDB.addEmployee(employee);
     }

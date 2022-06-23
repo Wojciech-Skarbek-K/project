@@ -28,9 +28,11 @@ public class EmployeeDB {
     public static Employee getEmployeeById(int emp_id) throws SQLException {
         Connection c = DB.getConnection();
         Statement st = c.createStatement();
+        System.out.println(emp_id);
         ResultSet rs = st.executeQuery(
-          "SELECT * FROM Employee WHERE emp_id=" + emp_id
+          "SELECT * FROM Employee WHERE emp_id=" + emp_id +";"
         );
+        rs.next();
         Employee employee = new Employee(rs);
         rs.close();
         st.close();
@@ -63,7 +65,7 @@ public class EmployeeDB {
                 "\"" + employee.getNin() + "\"" +
                 "\"" + employee.getBank() + "\"" +
                 employee.getSalary()/100 +
-                employee.getDepartment_id() +
+                employee.getDep_id() +
                 ");";
         st.executeUpdate(sql);
         return 1;
