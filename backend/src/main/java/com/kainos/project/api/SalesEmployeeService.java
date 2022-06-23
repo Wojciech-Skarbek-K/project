@@ -1,5 +1,6 @@
-package com.kainos.project.api.models;
+package com.kainos.project.api;
 
+import com.kainos.project.api.models.SalesEmployee;
 import com.kainos.project.db.SalesEmployeeDB;
 import io.swagger.annotations.Api;
 
