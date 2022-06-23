@@ -3,6 +3,8 @@ package com.kainos.project;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import io.federecio.dropwizard.swagger.SwaggerBundle;
+import io.federecio.dropwizard.swagger.SwaggerBundleConfiguration;
 
 public class WebServiceApplication extends Application<WebServiceConfiguration> {
 
@@ -12,12 +14,17 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
 
     @Override
     public String getName() {
-        return "true";
+        return "WebService";
     }
 
     @Override
     public void initialize(final Bootstrap<WebServiceConfiguration> bootstrap) {
-        // TODO: application initialization
+        bootstrap.addBundle(new SwaggerBundle<WebServiceConfiguration>() {
+            @Override
+            protected SwaggerBundleConfiguration getSwaggerBundleConfiguration(WebServiceConfiguration configuration) {
+                return configuration.getSwagger();
+            }
+        });
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.kainos.project.resources;
+package com.kainos.project.api;
 
 import io.swagger.annotations.Api;
 
