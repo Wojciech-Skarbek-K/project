@@ -11,7 +11,7 @@ public class Employee {
     private String emp_name;
     private String address;
     private String nin;
-    private String bank;
+    private String ban;
     private int salary; // divided by 100
 
     private short dep_id;
@@ -22,7 +22,7 @@ public class Employee {
             @JsonProperty("emp_name") String emp_name,
             @JsonProperty("address") String address,
             @JsonProperty("nin") String nin,
-            @JsonProperty("bank") String bank,
+            @JsonProperty("ban") String ban,
             @JsonProperty("salary") int salary,
             @JsonProperty("dep_id") short dep_id
     ) {
@@ -30,7 +30,7 @@ public class Employee {
         this.emp_name = emp_name;
         this.address = address;
         this.nin = nin;
-        this.bank = bank;
+        this.ban = ban;
         this.salary = salary;
         this.dep_id = dep_id;
     }
@@ -63,8 +63,8 @@ public class Employee {
         return nin;
     }
 
-    public String getBank() {
-        return bank;
+    public String getBan() {
+        return ban;
     }
 
     public int getSalary() {

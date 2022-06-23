@@ -59,14 +59,14 @@ public class EmployeeDB {
         Connection c = DB.getConnection();
         Statement st = c.createStatement();
         String sql = "INSERT INTO Employee" +
-                "(emp_name, address, nin, bank, salary, dep_id) VALUES (" +
-                "\"" + employee.getEmp_name() + "\"" +
-                "\"" + employee.getAddress() + "\"" +
-                "\"" + employee.getNin() + "\"" +
-                "\"" + employee.getBank() + "\"" +
-                employee.getSalary()/100 +
-                employee.getDep_id() +
-                ");";
+                "(emp_name, address, nin, ban, salary, dep_id) VALUES (" +
+                "\"" + employee.getEmp_name() + "\"," +
+                "\"" + employee.getAddress() + "\"," +
+                "\"" + employee.getNin() + "\"," +
+                "\"" + employee.getBan() + "\"," +
+                employee.getSalary()/100 + "," +
+                employee.getDep_id() + ");";
+        System.out.println(sql);
         st.executeUpdate(sql);
         return 1;
     }

@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1999695-abfc-436c-b664-a75a7e40a42c" name="Changes" comment="added:&#10;- employee model, db connection and service">
+    <list default="true" id="f1999695-abfc-436c-b664-a75a7e40a42c" name="Changes" comment="fixed:&#10;- employee GET endpoints">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kainos/project/api/EmployeesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kainos/project/api/EmployeesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kainos/project/api/WebService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kainos/project/api/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kainos/project/api/models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kainos/project/db/DB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kainos/project/db/DB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/kainos/project/db/EmployeeDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kainos/project/db/EmployeeDB.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +91,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655977128069</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fixed:&#10;- employee GET endpoints">
+      <created>1655980339934</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1655980339934</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +115,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial commit" />
     <MESSAGE value="added:&#10;- employee model, db connection and service" />
-    <option name="LAST_COMMIT_MESSAGE" value="added:&#10;- employee model, db connection and service" />
+    <MESSAGE value="fixed:&#10;- employee GET endpoints" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed:&#10;- employee GET endpoints" />
   </component>
 </project>

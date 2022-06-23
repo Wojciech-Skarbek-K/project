@@ -35,6 +35,7 @@ public class EmployeesService {
 
     @POST
     @Path("/employees")
+    @Consumes({MediaType.APPLICATION_JSON})
     @Produces({MediaType.APPLICATION_JSON})
     public int addEmployee(Employee employee) throws SQLException {
         return EmployeeDB.addEmployee(employee);
