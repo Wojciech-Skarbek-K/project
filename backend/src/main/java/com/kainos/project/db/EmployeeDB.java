@@ -12,6 +12,7 @@ public class EmployeeDB {
 
     public static List<Employee> getEmployees() throws SQLException {
         Connection c = DB.getConnection();
+        System.out.println(c+"\n\n\n");
         Statement st = c.createStatement();
         ResultSet rs = st.executeQuery(
                 "SELECT * FROM Employee;");
