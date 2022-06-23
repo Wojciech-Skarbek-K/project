@@ -13,3 +13,15 @@ exports.getEmployees = async () => {
       }
       return employees;
   }
+
+  exports.getDepartments = async () => { 
+    let departments = []  
+      try {  
+        const departmentsResponse = await axios.get('http://localhost:8080/api/getDepartment')
+        departments = departmentsResponse.data
+      } catch (e) {
+         return new Error('Could not get employees')
+
+      }
+      return departments;
+  }
