@@ -29,4 +29,13 @@ exports.getEmployees = async () => {
   exports.addEmployee = async (newEmployee) => {
     let results = await axios.post("http://localhost:8080/api/employees", newEmployee)
     return results.insertId; 
+  }
+  
+exports.getHighestSalesEmployee= async () => { 
+    try {  
+      const employeeResponse = await axios.get('http://localhost:8080/api/highestSalesEmployee')
+      return employeeResponse.data;
+    } catch (e) {
+       return new Error('Could not get employees')
+    }
 }

@@ -11,7 +11,6 @@ router.get('/employees', async (req, res) => {
 
 });
 
-
 router.get('/addEmployee', async (req, res) => {
   res.render('addEmployee', { departments: await employeeData.getDepartments()}
   ); 
@@ -28,6 +27,15 @@ router.post('/addEmployee/submit', async (req, res) => {
     res.render("addEmployee", req.body);
   }
   
+});
+
+router.get('/highestSalesEmployee', async (req, res) => {
+
+  res.render('highestSalesView', {
+    employee: await employeeData.getHighestSalesEmployee()
+  }
+  ); 
+
 });
 
 
