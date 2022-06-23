@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f1999695-abfc-436c-b664-a75a7e40a42c" name="Changes" comment="fixed:&#10;- employee GET endpoints">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kainos/project/api/EmployeesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kainos/project/api/EmployeesService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kainos/project/api/models/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kainos/project/api/models/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/kainos/project/db/EmployeeDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/kainos/project/db/EmployeeDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/employeeData.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/employeeData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,10 +42,14 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/Users/maciej.kaczor/project"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.kainos.project.api" />
     </key>
