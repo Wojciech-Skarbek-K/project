@@ -1,5 +1,6 @@
 package com.kainos.project;
 
+import com.kainos.project.api.DepartmentService;
 import com.kainos.project.api.EmployeesService;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -32,6 +33,7 @@ public class WebServiceApplication extends Application<WebServiceConfiguration> 
     public void run(final WebServiceConfiguration configuration,
                     final Environment environment) {
         environment.jersey().register(new EmployeesService());
+        environment.jersey().register(new DepartmentService());
     }
 
 }
