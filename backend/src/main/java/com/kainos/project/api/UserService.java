@@ -12,11 +12,19 @@ import java.util.List;
 @Path("/api")
 @Api("User API")
 public class UserService {
+
+    @POST
+    @Path("/users")
+    @Consumes({MediaType.APPLICATION_JSON})
+    @Produces({MediaType.APPLICATION_JSON})
+    public String addUser(User user) throws SQLException {
+        return UserDB.addUser(user);
+    }
+
     @GET
     @Path("/users")
     @Produces({MediaType.APPLICATION_JSON})
     public List<User> getUsers() throws SQLException {
-        System.out.println("tedt");
         return UserDB.getUsers();
     }
 

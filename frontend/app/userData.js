@@ -11,7 +11,6 @@ const db = wrapDB(dbconfig)
     const pool = mysql.createPool(dbconfig) 
     return { 
         query(sql, args) { 
-            console.log("in query in wrapper") 
             return util.promisify( pool.query ) 
             .call(pool, sql, args) 
         }, 
@@ -53,7 +52,6 @@ exports.getUsersPlease = async (username) => {
             users.push(data) 
         } 
       } catch (e) { 
-        console.log(e)
          return new Error('Could not get cities') 
       } 
       return users; 
@@ -80,7 +78,6 @@ exports.getUsersPlease = async (username) => {
       
 
     } catch (e) { 
-      console.log(e)
        return new Error('Could not get cities') 
     } 
     return loggedUser;

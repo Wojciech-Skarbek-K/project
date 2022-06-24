@@ -23,7 +23,6 @@ router.post('/registration', async (req, res) => {
     await userData.addUser(req.body);
     res.redirect('registration'); 
   } catch (e){
-    console.log(e)
     res.locals.errormessage = "Could not add user"
     res.render('newUserForm', req.body )
   }
@@ -48,7 +47,6 @@ router.post('/registration', async (req, res) => {
         res.redirect('loginForm'); 
       }
     } catch (e){
-      console.log(e)
       res.locals.errormessage = "Could not create employee"
       res.render('loginForm', req.body )
     }
@@ -66,7 +64,6 @@ router.post('/addEmployee/submit', async (req, res) => {
     let insertedKey = await employeeData.addEmployee(req.body ); 
     res.redirect('/employees') 
   } catch(e){
-    console.log(e);
     res.locals.errormessage = "Could not craete employee";
     res.render("addEmployee", req.body);
   }

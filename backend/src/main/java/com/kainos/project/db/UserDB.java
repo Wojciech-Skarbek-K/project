@@ -8,6 +8,25 @@ import java.util.List;
 
 public class UserDB {
 
+    public static String addUser(User user) {
+        try {
+            Connection c = DB.getConnection();
+            Statement st = c.createStatement();
+            String sql = "INSERT INTO User" +
+                    "(login, password, dep_id) VALUES (" +
+                    "\"" + user.getLogin() + "\"," +
+                    "\"" + user.getPassword() + "\"," +
+                    user.getDep_id() + ");";
+            st.executeUpdate(sql);
+            st.close();
+        } catch (SQLException e) {
+            return "Couldn't add user to database: " + e;
+        } catch (NullPointerException e) {
+            return "Couldn't add user: " + e.getMessage();
+        }
+        return "User " + user.getLogin() + " successfully added!";
+    }
+
     public static List<User> getUsers() throws SQLException {
         Connection c = DB.getConnection();
         Statement st = c.createStatement();
@@ -20,7 +39,6 @@ public class UserDB {
         }
         rs.close();
         st.close();
-        System.out.println(users);
         return users;
     }
 
@@ -28,7 +46,6 @@ public class UserDB {
 
 public static User getUser(String login) throws SQLException {
     Connection c = DB.getConnection();
-    System.out.println("\n\n\n" + login);
     Statement st = c.createStatement();
     ResultSet rs = st.executeQuery(
             "SELECT * "
