@@ -12,7 +12,7 @@ public class Employee {
     private String address;
     private String nin;
     private String ban;
-    private int salary; // divided by 100
+    private int salary; 
 
     private short dep_id;
 
@@ -42,7 +42,7 @@ public class Employee {
                 rs.getString("address"),
                 rs.getString("nin"),
                 rs.getString("ban"),
-                (int)(rs.getDouble("salary")*100),
+                (int)(rs.getDouble("salary")),
                 rs.getShort("dep_id")
         );
     }
