@@ -29,8 +29,8 @@ public class SalesEmployee {
         this(
                 rs.getShort("sal_id"),
                 rs.getShort("emp_id"),
-                rs.getDouble("com_rate")*100,
-                (int)rs.getDouble("sal_rate")*100
+                rs.getDouble("com_rate"),
+                (int)rs.getDouble("sal_rate")
         );
     }
 
