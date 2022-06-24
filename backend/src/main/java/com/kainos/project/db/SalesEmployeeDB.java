@@ -32,7 +32,7 @@ public class SalesEmployeeDB {
         String sql = "INSERT INTO Sales_Employee" +
                 "(emp_id, com_rate, sal_rate) VALUES (" +
                 salesEmployee.getEmp_id() + ", " +
-                salesEmployee.getWm_rate() / 100 + ", " +
+                salesEmployee.getCom_rate() / 100 + ", " +
                 salesEmployee.getSal_rate() / 100 + ");";
         System.out.println(sql);
         st.executeUpdate(sql);
