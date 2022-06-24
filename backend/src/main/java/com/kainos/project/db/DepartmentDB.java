@@ -32,7 +32,6 @@ public class DepartmentDB {
         String sql = "INSERT INTO Department" +
                 "(dep_name) VALUES (\"" +
                 department.getDep_name() + "\");";
-        System.out.println(sql);
         st.executeUpdate(sql);
         return 1;
     }

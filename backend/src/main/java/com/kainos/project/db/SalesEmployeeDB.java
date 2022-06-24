@@ -34,7 +34,6 @@ public class SalesEmployeeDB {
                 salesEmployee.getEmp_id() + ", " +
                 salesEmployee.getCom_rate() / 100 + ", " +
                 salesEmployee.getSal_rate() / 100 + ");";
-        System.out.println(sql);
         st.executeUpdate(sql);
         return 1;
     }

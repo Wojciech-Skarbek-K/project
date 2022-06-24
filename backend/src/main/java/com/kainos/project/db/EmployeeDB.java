@@ -12,7 +12,6 @@ public class EmployeeDB {
 
     public static List<Employee> getEmployees() throws SQLException {
         Connection c = DB.getConnection();
-        System.out.println(c+"\n\n\n");
         Statement st = c.createStatement();
         ResultSet rs = st.executeQuery(
                 "SELECT * FROM Employee;");
@@ -29,7 +28,6 @@ public class EmployeeDB {
     public static Employee getEmployeeById(int emp_id) throws SQLException {
         Connection c = DB.getConnection();
         Statement st = c.createStatement();
-        System.out.println(emp_id);
         ResultSet rs = st.executeQuery(
           "SELECT * FROM Employee WHERE emp_id=" + emp_id +";"
         );
@@ -67,7 +65,6 @@ public class EmployeeDB {
                 "\"" + employee.getBan() + "\"," +
                 employee.getSalary()/100 + "," +
                 employee.getDep_id() + ");";
-        System.out.println(sql);
         st.executeUpdate(sql);
         return 1;
     }
