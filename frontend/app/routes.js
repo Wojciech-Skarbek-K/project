@@ -100,4 +100,10 @@ router.get('/salary-report', async (req, res) => {
 
 });
 
+router.get('/home', async (req, res) => {
+
+  res.render('mainView'
+  ); 
+});
+
 module.exports = router
