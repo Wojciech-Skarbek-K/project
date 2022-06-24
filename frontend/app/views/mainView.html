@@ -1,0 +1,31 @@
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<p>HR</p>
+<a href="http://localhost:3000//addEmployee">Add employee</a>
+<a href="http://localhost:3000//addSalesEmployee">Add sales employee</a>
+<a href="http://localhost:3000/employees">Generate employee report</a>
+
+<p>Finance</p>
+<a href="http://localhost:3000/salaryReport">Generate salary report</a>
+
+<p>Sales manager</p>
+<a href="http://localhost:3000/highestSalesEmployee">Display employee with highest sales value</a>
+
+<p>Talent manager</p>
+<a href="#">Add project</a>
+<a href="#">Add employee to project</a>
+<a href="#">Display employees within a project</a>
+<a href="#">Display projects with no employees</a>
+<a href="#">Display employees that are currently not on a project</a> 
+<a href="#">Display number of employees on a project</a>
+
+
+
+{% endblock %}
