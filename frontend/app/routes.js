@@ -75,7 +75,12 @@ router.post('/addEmployee/submit', async (req, res) => {
 
 router.get('/highestSalesEmployee', async (req, res) => {
 
+  res.render('highestSalesView', {
+    employee: await employeeData.getHighestSalesEmployee()
+  }
+  ); 
 
+});
 
 router.get('/salary-report', async (req, res) => {
   let empData = await employeeData.getEmployees();
