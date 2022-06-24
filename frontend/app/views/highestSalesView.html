@@ -27,7 +27,7 @@
     rows: [
       [
         {
-          text: employee.sal_id
+          text: employee.sal_id 
         },
         {
           text: employee.emp_id
@@ -40,6 +40,11 @@
         }
       ]
     ]
+  }) }}
+
+  {{ govukButton({
+    text: "Home",
+    href: "http://localhost:3000/home"
   }) }}
 
 {% endblock %}
